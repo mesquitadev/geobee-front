@@ -17,7 +17,7 @@ interface SignUpFormData {
 
 export default function SignUp() {
   const signInFormSchema = yup.object().shape({
-    pinCode: yup.string().required('Este campo é obrigatório')
+    pinCode: yup.string().required('Este campo é obrigatório'),
   });
 
   const [imageUrl, setImageUrl] = useState('');
@@ -26,7 +26,7 @@ export default function SignUp() {
     const imageUrls = [
       'https://res.cloudinary.com/dxin0mfj4/image/upload/v1682431925/Acai%20Sunset/DSCF3050_z4ymvm.jpg',
       'https://res.cloudinary.com/dxin0mfj4/image/upload/v1682432059/Acai%20Sunset/DSCF3062_msdtel.jpg',
-      'https://res.cloudinary.com/dxin0mfj4/image/upload/v1682425781/Acai%20Sunset/DSCF3402_wpwqlq.jpg'
+      'https://res.cloudinary.com/dxin0mfj4/image/upload/v1682425781/Acai%20Sunset/DSCF3402_wpwqlq.jpg',
     ];
 
     const randomIndex = Math.floor(Math.random() * imageUrls.length);
@@ -39,7 +39,7 @@ export default function SignUp() {
   const { handleSubmit, formState, control } = useForm({
     mode: 'onBlur',
     reValidateMode: 'onBlur',
-    resolver: yupResolver(signInFormSchema)
+    resolver: yupResolver(signInFormSchema),
   });
 
   const { errors } = formState;
@@ -47,7 +47,7 @@ export default function SignUp() {
   const handleSignUp = async (values: SignUpFormData) => {
     try {
       setLoading(true);
-      values.status = true
+      values.status = true;
       await api.patch(`/users/${values.pinCode}`, values);
       toast({
         title: 'Sucesso',
@@ -55,19 +55,18 @@ export default function SignUp() {
         status: 'success',
         duration: 9000,
         isClosable: true,
-        position: 'top-right'
+        position: 'top-right',
       });
-      setLoading(false)
+      setLoading(false);
     } catch (err) {
       const error = err as AxiosError;
-      console.log('errr', err)
       toast({
         title: 'Erro ao realizar cadastro!',
         description: error?.response?.data.message,
         status: 'error',
         duration: 9000,
         isClosable: true,
-        position: 'top-right'
+        position: 'top-right',
       });
       setLoading(false);
     }
