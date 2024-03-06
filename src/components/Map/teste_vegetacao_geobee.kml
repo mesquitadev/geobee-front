@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="teste_vegetacao_geobee" id="teste_vegetacao_geobee">
+	<SimpleField name="SPRAREA" type="float"></SimpleField>
+	<SimpleField name="SPRPERIMET" type="float"></SimpleField>
+	<SimpleField name="SPRCLASSE" type="string"></SimpleField>
+</Schema>
+<Folder><name>teste_vegetacao_geobee</name>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#teste_vegetacao_geobee">
+		<SimpleData name="SPRAREA">123.3125</SimpleData>
+		<SimpleData name="SPRPERIMET">70.0657</SimpleData>
+		<SimpleData name="SPRCLASSE">mangue</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>95.582749000052,9723097.151841 92.4641459999839,9723097.998084 90.3320880000247,9723100.120148 91.1539079999784,9723102.73011 92.4683400000213,9723105.992413 92.1422139999922,9723109.908174 91.6515699999873,9723113.008274 91.9818900000537,9723117.086841 93.6249300000491,9723121.164719 95.9237320000539,9723124.100206 96.9085290000075,9723124.589138 100.538502000039,9723124.678604 100.938241999946,9723122.104379 100.332967999973,9723121.202696 98.920558999991,9723118.898324 96.6014229999855,9723117.496429 94.8867189999437,9723115.392661 94.6842770000221,9723113.789211 94.9854680000572,9723111.48394 96.3962479999755,9723110.681422 98.5126790000359,9723109.978756 98.3103960000444,9723108.675972 97.3018699999666,9723107.674278 96.595587000018,9723106.371759 94.5759059999837,9723099.35726 95.582749000052,9723097.151841</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+</Folder>
+</Document></kml>
